@@ -1,0 +1,22 @@
+- 1.bandit0
+  - 解法：cat readme
+- 2.bandit1
+  - 解法：cat ./-
+  - 知识点：-作为输入（cat - 或 grep "pattern"）程序从终端或管道读取数据，如echo "Hello" | cat - ; 作为输出，将结果输出到终端或重定向到文件，如: tar -cvf - mydir > backup.tar, curl http://example.com/archive.tar.gz | tar -xzf -
+- 3.bandit2
+  - 解法：cat "spaces in this filename"或者cat spaces\ in\ this\ filename
+- 4.bandit3
+  - 解法：cd inhere ; ls -a ; cat "...Hiding From You"
+- 5.bandit4
+  - 解法：cd inhere ; find . -type f -readable -exec file {} + | grep "ASCII text" ; cat 
+- 6.bandit5
+  - 解法：cd inhere ; find . -type f -size 1033c -readable -exec file {} + | grep "ASCII text" ; cat
+- 7.bandit6
+  - 解法：find / -user bandit7 -group bandit6 -size 33c 2>/dev/null ; cat
+  - 知识点：2>/dev/null起到过滤错误信息输出作用
+- 8.bandit7
+  - 解法：grep "millonth" data.txt
+- 9.bandit8
+  - 解法：grep data.txt | uniq -u
+- 10.bandit9
+  - 解法：strings data.txt | grep "===" 或cat data.txt | strings | grep "==="
